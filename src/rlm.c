@@ -36,9 +36,6 @@
  ** Jun 05, 2003 - move lm_wfit  to lm.c
  ** Sep 13, 2003 - rlm now has a parameter that controls the maximum number of iterations
  ** Apr 5, 2004 - all malloc/free are now Calloc/Free
- ** May 26, 2004 - rlm specialised for anova model. 
- ** June 21, 2004 - fixed up specialization for default anova model.
- ** June 23, 2004 - move specialization to its own file
  **
  ********************************************************************/
 
@@ -50,7 +47,7 @@
 #include "rlm.h"
 #include "psi_fns.h"
 #include "lm.h"
-#include "matrix_functions.h"
+
 
 
 #include <R.h>
@@ -106,9 +103,9 @@ double irls_delta(double *old, double *new, int length){
  **       w <- sqrt(w)
  **	  max(abs((matrix(r * w, 1, length(r)) %*% x)/sqrt(matrix(w,1, length(r))%*% (x^2))))/sqrt(sum(w * r^2))
  **	  }
- 
+ ******************************************************************/
 
- static double irls_rrxwr(double *x, double *w, double *r, int rows, int cols){
+double irls_rrxwr(double *x, double *w, double *r, int rows, int cols){
   int i =0,j=0;
   double *weights = Calloc(rows,double);
   double *rw = Calloc(rows,double);
@@ -153,9 +150,6 @@ double irls_delta(double *old, double *new, int length){
   Free(weights);
   return(max_num/sum);
 }  
-
-
-**********************************************************************************/
 
 
 
@@ -323,5 +317,11 @@ void rlm_fit_R(double *x, double *y, int *rows, int *cols, double *out_beta, dou
 
   rlm_fit(x, y, *rows, *cols, out_beta, out_resids,out_weights,psi_huber,1.345, 20,0);
 }
+
+
+
+
+
+
 
 

@@ -130,11 +130,9 @@ Class \code{"exprSet"}, directly.
     \item{Mbox}{\code{signature(object = "PLMset")}: gives a boxplot of
       M's for each chip. The M's are computed relative to a "median"
       chip.}
-    \item{normvec}{\code{signature(x = "PLMset")}: will return the normalization vector (if it has been
+    \item{normvec}{will return the normalization vector (if it has been
       stored)}
-    \item{residSE}{\code{signature(x = "PLMset")}: will return the residual SE (if it has been stored)}
-    \item{boxplot}{\code{signature(x = "PLMset")}: Boxplot of Normalized
-      Unscaled Standard Errors (NUSE)}
+    \item{residSE}{will return the residual SE (if it has been stored)}
  }
 }
 \note{This class is better described in the vignette.}

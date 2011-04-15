@@ -63,7 +63,7 @@ image(Pset,which=2)
 @
 Note that the \Rfunarg{which} argument is used to control which array is drawn. Its value should be between $1$ and $n$, where $n$ is the number of arrays in the dataset. If \Rfunarg{which} is not supplied, then images for all chips are drawn, one by one in succession. Figure \ref{weights} shows the resultant chip pseudo image. Areas of low weight are greener, high weights (ie weight of 1) are light grey. 
 
-<<weightsImageDo, results=hide, echo=FALSE, fig=FALSE>>=
+<<weightsImageDo, results=hide, echo=FALSE, fig=FALSE, eval=FALSE>>=
 png("Quality-weightimage1a.png",height=4,width=4,pointsize=10,res=300,units="in")
 par(mar=c(2.0,2.1,1.6,1.1),oma=c(1,1,0,0))
 image(Pset,which=2)
@@ -85,7 +85,7 @@ image(Pset,which=2,col=gray(25:0/25),add.legend=TRUE)
 with Figure \ref{weightscolor} showing the results. Note that it is recommended that you use a legend if you use an alternative coloring scheme. Legends are added when \Rfunarg{add.legend=TRUE} is supplied.
 
 
-<<weightscolorImageDo, results=hide, echo=FALSE, fig=FALSE>>=
+<<weightscolorImageDo, results=hide, echo=FALSE, fig=FALSE, eval=FALSE>>=
 png("Quality-weightimage2a.png",height=8,width=8,res=300,units="in")
 par(mar=c(2.0,2.1,1.6,1.1),oma=c(1,1,0,0))
 image(Pset,which=2,col=gray(0:25/25),add.legend=T)
@@ -117,7 +117,7 @@ image(Pset,which=2, type="neg.resids")
 image(Pset,which=2, type="sign.resids")
 @
 
-<<residualImageDo, results=hide, echo=FALSE, fig=FALSE>>=
+<<residualImageDo, results=hide, echo=FALSE, fig=FALSE, eval=FALSE>>=
 png("Quality-residualimages1.png",height=4,width=4,res=300,units="in")
 par(mar=c(2.0,2.1,1.6,1.1),oma=c(1,1,0,0))
 image(Pset,which=2, type="resids")
@@ -156,7 +156,7 @@ image(Pset,which=2,type="pos.resids",col=pseudoPalette(low="yellow",high="darkbl
 @ 
 
 
-<<residualcolorImageDo, results=hide, echo=FALSE, fig=FALSE>>=
+<<residualcolorImageDo, results=hide, echo=FALSE, fig=FALSE, eval=FALSE>>=
 png("Quality-residualimages5.png",height=8,width=8,res=300,units="in")
 par(mar=c(2.0,2.1,1.6,1.1),oma=c(1,1,0,0))
 image(Pset,which=2,type="resids",col=pseudoPalette(low="darkgreen",high="magenta",mid="lightgrey"),add.legend=TRUE)
@@ -189,7 +189,7 @@ Another quality assessment tool are Relative Log Expression (RLE) values. Specif
 RLE(Pset,main="RLE for Dilution dataset")
 @
 with the resulting plot shown in Figure \ref{RLE}. When examining this plot focus should be on the shape and position of each of the boxes. Typically arrays with poorer quality show up with boxes that are not centered about 0 and/or are more spread out. For this particular dataset there is no such array.
-<<RLEDo, results=hide, echo=FALSE, fig=FALSE>>=
+<<RLEDo, results=hide, echo=FALSE, fig=FALSE, eval=FALSE>>=
 png("Quality-RLE.png",height=4,width=4,pointsize=10,res=300,units="in")
 par(mar=c(2.0,2.1,1.6,1.1),oma=c(1,1,0,0))
 RLE(Pset,main="RLE for Dilution dataset")
@@ -219,7 +219,7 @@ each gene on each array from \Rfunction{fitPLM} are taken and standardized acros
 NUSE(Pset,main="NUSE for Dilution dataset")
 @
 
-<<NUSEDo, results=hide, echo=FALSE, fig=FALSE>>=
+<<NUSEDo, results=hide, echo=FALSE, fig=FALSE, eval=FALSE>>=
 png("Quality-NUSE.png",height=4,width=4,pointsize=10,res=300,units="in")
 par(mar=c(2.0,2.1,1.6,1.1),oma=c(1,1,0,0))
 NUSE(Pset,main="NUSE for Dilution dataset")

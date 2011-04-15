@@ -59,7 +59,7 @@ par(mfrow=c(2,2))
 MAplot(eset.Dilution)
 @ 
 
-<<FirstUsageDo, results=hide, echo=FALSE, fig=FALSE>>=
+<<FirstUsageDo, results=hide, echo=FALSE, fig=FALSE, eval=FALSE>>=
 pdf("MAplotFirstUse.pdf",height=8,width=8,pointsize=10)
 par(mfrow=c(2,2))
 MAplot(eset.Dilution)

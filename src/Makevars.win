@@ -1,5 +1,12 @@
 PKG_CPPFLAGS += -DHAVE_ZLIB
-PKG_LIBS += $(FLIBS) $(LAPACK_LIBS) $(BLAS_LIBS) -lz
+PKG_LIBS += $(FLIBS) $(LAPACK_LIBS) $(BLAS_LIBS) 
+
+ifeq (,$(shell pkg-config --version 2>/dev/null))
+  PKG_LIBS += -lz
+else
+  PKG_CPPFLAGS = $(shell pkg-config --cflags zlib)
+  PKG_LIBS += $(shell pkg-config --libs zlib)
+endif
 
 %.o: %.c
 	$(CC) $(ALL_CPPFLAGS) $(ALL_CFLAGS) -c $< -o $@

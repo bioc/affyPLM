@@ -892,14 +892,14 @@ void rlm_PLMset_nameoutput(PLMRoutput *Routput,PLM_output *output,PLM_outputsett
 	}
       } else if (model->strata[4] == 4){
 	for (j =0; j < model->max_probe_treatment_factor+1;j++){
-	  tmp_str = (char *)R_Calloc(strlen(CHAR(STRING_ELT(getAttrib(probe_trt_levels,R_NamesSymbol),0)))+ strlen(CHAR(STRING_ELT(VECTOR_ELT(probe_trt_levels,0),j)))+16,char);
+	  tmp_str = (char *)R_Calloc(strlen(CHAR(STRING_ELT(getAttrib(probe_trt_levels,R_NamesSymbol),0)))+ strlen(CHAR(STRING_ELT(VECTOR_ELT(probe_trt_levels,0),j)))+17,char);
 	  tmp_str = strcpy(tmp_str,CHAR(STRING_ELT(getAttrib(probe_trt_levels,R_NamesSymbol),0)));
 	  tmp_str = strcat(tmp_str,"_");
 	  tmp_str = strcat(tmp_str,CHAR(STRING_ELT(VECTOR_ELT(probe_trt_levels,0),j)));
 	  tmp_str = strcat(tmp_str,":probe.type_PM:");
 	  SET_STRING_ELT(probe_colnames,2*j,mkChar(tmp_str));
 	  R_Free(tmp_str);
-	  tmp_str = (char *)R_Calloc(strlen(CHAR(STRING_ELT(getAttrib(probe_trt_levels,R_NamesSymbol),0)))+ strlen(CHAR(STRING_ELT(VECTOR_ELT(probe_trt_levels,0),j)))+16,char);
+	  tmp_str = (char *)R_Calloc(strlen(CHAR(STRING_ELT(getAttrib(probe_trt_levels,R_NamesSymbol),0)))+ strlen(CHAR(STRING_ELT(VECTOR_ELT(probe_trt_levels,0),j)))+17,char);
 	  tmp_str = strcpy(tmp_str,CHAR(STRING_ELT(getAttrib(probe_trt_levels,R_NamesSymbol),0)));
 	  tmp_str = strcat(tmp_str,"_");
 	  tmp_str = strcat(tmp_str,CHAR(STRING_ELT(VECTOR_ELT(probe_trt_levels,0),j)));
